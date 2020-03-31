@@ -30,6 +30,10 @@ public class TestServlet extend HttpServlet {
         buildResponse(webResponse, response);
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        doGet(request, response);
+    }
+
     private HttpServletResponse forwardTraffic(String address, String requestMethod, HttpServletRequest request) throws IOException {
         //build url, might have missed some url encoding
         URL url = new URL(address);
